@@ -1,0 +1,9 @@
+uploadapp:
+  container_name: uploadapp
+  image: sidikriyan/nodejs
+  command : pm2 start app.js --no-daemon --watch --max-memory-restart 3G --merge-logs --log-date-format="YYYY-MM-DD HH:mm Z"
+  restart: always
+  ports:
+    - "8080:8080"
+  volumes:
+    - .:/app
